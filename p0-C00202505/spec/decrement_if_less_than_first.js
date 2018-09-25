@@ -10,50 +10,17 @@ describe('decrement_if_less_than_first()', function () {
     expect(decrement_if_less_than_first).to.be.a('function');
 
   });
-
-  it('Test Output', function () {
-    expect(decrement_if_less_than_first(4)).to.equal(4);
+  it('Works with 1 value', function () {
+    expect(decrement_if_less_than_first([4])).to.eql([4]);
   });
 
-  it('Test Output', function () {
-    expect(decrement_if_less_than_first(2)).to.equal(1);
+  it('Works with small lists', function () {
+    expect(decrement_if_less_than_first([4,2,8,3,9,4])).to.eql([4,1,8,2,9,4]);
   });
 
-  it('Test Output', function () {
-    expect(decrement_if_less_than_first(8)).to.equal(8);
-  });
-
-  it('Test Output', function () {
-    expect(decrement_if_less_than_first(3)).to.equal(2);
-  });
-
-  it('Test Output', function () {
-    expect(decrement_if_less_than_first(9)).to.equal(9);
-  });
-
-  it('Test Output', function () {
-    expect(decrement_if_less_than_first(4)).to.equal(4);
-  });
-
-  it('Test Output', function () {
-    expect(decrement_if_less_than_first(10)).to.equal(10);
-  });
-
-  it('Test Output', function () {
-    expect(decrement_if_less_than_first(5)).to.equal(5);
-  });
-
-  it('Test Output', function () {
-    expect(decrement_if_less_than_first(11)).to.equal(11);
-  });
-
-  it('Test Output', function () {
-    expect(decrement_if_less_than_first(6)).to.equal(6);
-  });
-
-  it('Test Output', function () {
-    expect(decrement_if_less_than_first(1)).to.equal(0);
-  });
+  it('Works with big lists', function(){
+    expect(decrement_if_less_than_first([4,2,8,3,9,4,10,5,11,6,1])).to.eql([4,1,8,2,9,4,10,5,11,6,0]);
+  })
 
 
 
